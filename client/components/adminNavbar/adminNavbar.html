@@ -1,0 +1,16 @@
+<div  ng-cloak>
+  <md-content flex class="mystyle" >
+    <md-toolbar style="background-color: #4cae4c" >
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Admin menu</span>
+        </h2>
+        <ul class="nav navbar-nav">
+          <li ng-repeat="item in menu" ui-sref-active="active">
+            <a ng-click="goToState(item)" >{{item.title}}</a>
+          </li>
+        </ul>
+      </div>
+    </md-toolbar>
+  </md-content>
+</div>

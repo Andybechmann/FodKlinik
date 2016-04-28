@@ -1,0 +1,54 @@
+<div ng-cloak class="container backGround" flex= "100" >
+
+  <md-content class="md-padding backGround" layout-xs="column" layout="column" flex= "70" flex-offset="15">
+
+
+    <div ng-if = "!isId()" flex-xs flex-gt-xs="50" layout="column"style = "height:100%" ng-repeat="therapist in therapists">
+
+      <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{therapist.name}}</span>
+            <span class="md-subhead">{{therapist.description}}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media">
+              <img src ={{therapist.imageUrl}}>
+
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="first center">
+          <md-button ng-if="isLoggedIn()">bookTime</md-button>
+        <md-button ng-click="goToDetail(therapist)">info</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+
+<div ng-if="isId()">
+    <md-card>
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{therapist.name}}</span>
+                <span class="md-subhead">{{therapist.description}}</span><br>
+                <span class="md-subhead">Treatments </span>
+                <span class="md-subhead" data-toggle="tooltip" title="go to" ng-click="goToTreatment(t)" ng-repeat="t in therapist.treatments">
+                  <li>
+                    <md-button ng-click="goToTreatment(t)"> {{t.name}}</md-button>
+                  </li>
+                </span>
+              </md-card-title-text>
+              <md-card-title-media>
+                <div class="md-media-md card-media">
+                  <img src ={{therapist.imageUrl}}>
+                </div>
+              </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="first center">
+            <md-button ng-if="isLoggedIn()">bookTime</md-button>
+            <md-button ng-click="goBack()">Back</md-button>
+            </md-card-actions>
+          </md-card>
+
+  </md-content>
+</div>

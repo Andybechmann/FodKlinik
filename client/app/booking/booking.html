@@ -1,0 +1,47 @@
+<div ng-cloak class="container backGround" flex= "100">
+<md-content class="md-padding backGround" layout-xs="column" layout="column" flex= "70" flex-offset="15">
+
+  <!--
+  <md-select multiple aria-label="treatments" ng-model="selectedTreatments" >
+    <md-option ng-repeat="treatment in treatments track by treatment._id">{{ treatment.name }}</md-option>
+  </md-select>
+-->
+<h4>Select Treatment</h4>
+<md-checkbox ng-repeat="treatment in treatments"
+             ng-checked=""
+             ng-click="Check(treatment)">
+  {{ treatment.name }}
+</md-checkbox>
+
+  <h4>Enter start Date</h4>
+  <md-datepicker aria-label="Enter date" ng-model="treatmentDate" md-placeholder="Enter date" ng-required></md-datepicker>
+  <md-button ng-click="caboom()" md-no-ink class="md-primary">Search</md-button>
+
+  <md-card ng-repeat="therapist in therapists">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{therapist.name}}</span>
+        <span class="md-subhead">{{therapist.description}}</span>
+      </md-card-title-text>
+
+    </md-card-title>
+    <md-card-content>
+      <md-card ng-repeat="ava in therapist.available">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{ava.date.format("dddd, MMMM Do YYYY");}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="first center">
+          <md-button ng-repeat="time in ava.time" md-no-ink class="md-primary">{{time}}</md-button>
+        </md-card-actions>
+      </md-card>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="first center">
+      <md-button ng-if="isLoggedIn()">bookTime</md-button>
+
+    </md-card-actions>
+  </md-card>
+  </div>
+</md-content>
+</div>
