@@ -9,32 +9,15 @@ var TherapistSchema = new mongoose.Schema({
     type:String,
     unique: true
   },
-  description:String,
-  imageUrl: String,
-  treatments:[{
-    type: Schema.ObjectId,
-    ref:'Treatment'}],
-  bookings: [{
-    type: Schema.ObjectId,
-    ref:'Booking'
+  defaultWorkingHours:[{
+    startTime:Date,
+    endTime:Date,
+    active:Boolean
   }],
-  dayWorking:[{
-    dayOfWeek:{
-      type:String,
-      unique: false
-    },
-    active:Boolean,
-    openingHours:{startTime:Date,endTime:Date},
-    pauses:[{startTime:Date,endTime:Date}],
-    bookings:[{startTime:Date,endTime:Date,booking:{
-      type: Schema.ObjectId,
-      ref:'Booking'
-    }}]
-  }],
-   holiday:[{
-     startDate:Date,
-     endDate: Date
-    }]
+  breaks:[{
+    startTime:Date,
+    endTime:Date
+  }]
 });
 
 export default mongoose.model('Therapist', TherapistSchema);

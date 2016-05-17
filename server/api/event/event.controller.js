@@ -1,16 +1,16 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/therapist              ->  index
- * POST    /api/therapist              ->  create
- * GET     /api/therapist/:id          ->  show
- * PUT     /api/therapist/:id          ->  update
- * DELETE  /api/therapist/:id          ->  destroy
+ * GET     /event              ->  index
+ * POST    /event              ->  create
+ * GET     /event/:id          ->  show
+ * PUT     /event/:id          ->  update
+ * DELETE  /event/:id          ->  destroy
  */
 
 'use strict';
 
 import _ from 'lodash';
-import Therapist from './Therapist.model';
+import Event from './event.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -23,7 +23,7 @@ function respondWithResult(res, statusCode) {
 
 function saveUpdates(updates) {
   return function(entity) {
-    var updated = _.assign(entity, updates);
+    var updated = _.merge(entity, updates);
     return updated.saveAsync()
       .spread(updated => {
         return updated;
@@ -59,61 +59,43 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Therapists
+// Gets a list of Events
 export function index(req, res) {
-  var query = {};
-  if(req.query.treatments){
-    var array = JSON.parse( req.query.treatments);
-
-
-    Therapist.find({})
-    .where('treatments').in(array)
-    .where('dayWorking.openingHours.startTime').gte(new Date(req.query.date ))
-    .where('dayWorking.openingHours.endTime').lte(new Date(req.query.date ))
-    .execAsync()
+  Event.findAsync()
     .then(respondWithResult(res))
     .catch(handleError(res));
-  }
-  else{
-    Therapist.find({})
-    .execAsync()
-    .then(respondWithResult(res))
-    .catch(handleError(res));
-  }
 }
 
-// Gets a single Therapist from the DB
+// Gets a single Event from the DB
 export function show(req, res) {
-  Therapist.findById(req.params.id)
-    .populate('treatments', 'name')
+  Event.findByIdAsync(req.params.id)
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Creates a new Therapist in the DB
+// Creates a new Event in the DB
 export function create(req, res) {
-  Therapist.createAsync(req.body)
+  Event.createAsync(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Updates an existing Therapist in the DB
+// Updates an existing Event in the DB
 export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  Therapist.findById(req.params.id)
-    .populate('treatments', 'name')
+  Event.findByIdAsync(req.params.id)
     .then(handleEntityNotFound(res))
     .then(saveUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Deletes a Therapist from the DB
+// Deletes a Event from the DB
 export function destroy(req, res) {
-  Therapist.findByIdAsync(req.params.id)
+  Event.findByIdAsync(req.params.id)
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));

@@ -62,184 +62,12 @@ Therapist.find({}).removeAsync()
         treatments: ['570219df5cca8f701a078f46','570219df5cca8f701a078f47'],
         dayWorking: [
           {
-            dayOfWeek: 'Mandag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)},
-            pauses: [{startTime: new Date(2010, 10, 10, 8, 30), endTime: new Date(2010, 10, 10, 9, 0)},
-              {startTime: new Date(2010, 10, 10, 11, 30), endTime: new Date(2010, 10, 10, 12, 0)}]
-          },
-          {
-            dayOfWeek: 'Tirsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2017, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Onsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Torsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Fredag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Lørdag',
-            active: false,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Søndag',
-            active: false,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
+            startTime:?,
+            endTime:Date,
+            active:Boolean
           }
         ]
-      }, {
-        name: 'Ievgenii',
-        description: 'Erfaring behandler',
-        imageUrl: "../../assets/images/black.jpg",
-        treatments: ['570219df5cca8f701a078f46'],
-        dayWorking: [
-          {
-            dayOfWeek: 'Mandag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Tirsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Onsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Torsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Fredag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Lørdag',
-            active: false,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Søndag',
-            active: false,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          }
-        ],
-        holiday: [
-          {startDate: new Date(2016, 2, 1, 0, 0), endDate: new Date(2016, 2, 15, 0, 0)},
-          {startDate: new Date(2016, 4, 1, 0, 0), endDate: new Date(2016, 4, 15, 0, 0)}
-        ]
-      }, {
-        name: 'kathe',
-        description: 'Erfaring behandler',
-        imageUrl: "../../assets/images/ked.jpg",
-      treatments: ['570219df5cca8f701a078f47'],
-        dayWorking: [
-          {
-            dayOfWeek: 'Mandag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Tirsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Onsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Torsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Fredag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Lørdag',
-            active: false,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Søndag',
-            active: false,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          }
-        ]
-      }, {
-        name: 'Kathe Lorenzen',
-        description: 'Jeg blev lægeeksamineret fodplejer i Sept. 2012. Uddannelsen har jeg taget i Aulum, hvor jeg også har taget kursus i Kinesisk fodmassage samt Gellac. Hotstonemassagen har jeg taget hos Sabine Bruhn (Ringkøbing massage og wellnes). Jeg har også kursus i Shellac fra CND, som jeg også forhandler i klinikken.' +
-        'Min klinik ligger i Sønderris i Esbjerg, og det vil glæde mig at se dig til en personlig samt nærværende behandling, hvor velvære er i centrum' +
-        'Dine fødder skal bære rundt på din krop lige fra den dag, du tager dine første skridt. Det er en belastning, som faktisk er meget større, end de fleste går rundt og tror' +
-        'De fleste fodlidelser og problemer kan forebygges, hvis du giver dine fødder et par minutters opmærksomhed hver dag' +
-        'Du har kun det ene par, som skal bære dig gennem hele livet, men ofte glemmer du at pleje dem, fordi de bliver gemt væk i strømper og sko den lange dag. Du bliver først opmærksom på dine fødder, når de bliver ømme eller noget gør ondt i dem.' +
-        'Smukke fødder giver velvære for krop og sjæl – dit velvære spejler sig i dit udseende, og giver dig indre og ydre skønhed',
-        imageUrl: "../../assets/images/påske.jpg",
-      treatments: ['570219df5cca8f701a078f46','570219df5cca8f701a078f47'],
-        dayWorking: [
-          {
-            dayOfWeek: 'Mandag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Tirsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Onsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Torsdag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Fredag',
-            active: true,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Lørdag',
-            active: false,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          },
-          {
-            dayOfWeek: 'Søndag',
-            active: false,
-            openingHours: {startTime: new Date(2010, 10, 10, 7, 0), endTime: new Date(2010, 10, 10, 15, 0)}
-          }
-        ],
-        holiday: [
-          {startDate: new Date(2016, 2, 1), endDate: new Date(2016, 2, 15)},
-          {startDate: new Date(2016, 4, 1), endDate: new Date(2016, 4, 15)}
-        ]
-      }
-    );
+      })
   });
 
 User.find({}).removeAsync()
@@ -250,6 +78,7 @@ User.find({}).removeAsync()
         email: 'test@example.com',
         password: 'test'
       }, {
+        _id:'573af09e9a0ed72c1d6adb24',
         provider: 'local',
         role: 'admin',
         name: 'Admin',
