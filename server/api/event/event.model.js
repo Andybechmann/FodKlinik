@@ -17,7 +17,7 @@ var EventSchema = new mongoose.Schema({
   },
   treatment: {
     type: Schema.ObjectId,
-    ref: 'Therapist'
+    ref: 'Treatment'
   },
   user: {
     type: Schema.ObjectId,

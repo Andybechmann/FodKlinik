@@ -1,22 +1,28 @@
 'use strict';
 
 var mongoose = require('bluebird').promisifyAll(require('mongoose')),
-Schema = mongoose.Schema;
+  Schema = mongoose.Schema;
 
 
 var TherapistSchema = new mongoose.Schema({
-  name:{
-    type:String,
+  name: {
+    type: String,
     unique: true
   },
-  defaultWorkingHours:[{
-    startTime:Date,
-    endTime:Date,
-    active:Boolean
+  description: String,
+  imageUrl: String,
+  treatments: [{
+    type: Schema.ObjectId,
+    ref: 'Treatment'
   }],
-  breaks:[{
-    startTime:Date,
-    endTime:Date
+  defaultWorkingHours: [{
+    startTime: Date,
+    endTime: Date,
+    active: Boolean
+  }],
+  breaks: [{
+    startTime: Date,
+    endTime: Date
   }]
 });
 
